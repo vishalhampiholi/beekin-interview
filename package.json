@@ -1,0 +1,36 @@
+{
+  "name": "job_portal",
+  "version": "1.0.0",
+  "description": "Job portal project using  the mern stack ",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apurvpatil18/Job_Portal.git"
+  },
+  "author": "Apurv Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apurvpatil18/Job_Portal/issues"
+  },
+  "homepage": "https://github.com/apurvpatil18/Job_Portal#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0",
+    "morgan": "^1.10.0",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
