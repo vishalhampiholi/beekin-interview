@@ -19,7 +19,7 @@ export const updateUserController = async (req, res, next) => {
   });
 };
 
-export const getUserController = async (req, res) => {
+export const getUserController = async (req, res, next) => {
   const { Firstname, email, mobileNo } = req.body;
   /*VALIDATION */
   if (!Firstname || !email || !mobileNo) {
