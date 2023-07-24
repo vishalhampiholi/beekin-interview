@@ -2,13 +2,13 @@
 
 <img width="960" alt="image" src="https://github.com/apurvpatil18/Node.js-Job-Portal/assets/98873382/de0b0211-ea4e-4e39-8b22-84c30f90f55e">
 
+Project Overview for GitHub:
+------------------------------
 
-Description:
--------------
+**Description:**
 The Node.js Job Portal is a web application built using Node.js, Express, and MongoDB. It serves as a platform for users to register, log in, and manage job listings. The application includes full CRUD (Create, Read, Update, Delete) operations for job listings, allowing users to add, view, update, and delete job postings. Additionally, the API endpoints are thoroughly documented using Swagger, providing developers with clear documentation and a user-friendly interface to interact with the API.
 
-Key Features:
---------------
+**Key Features:**
 1. User Authentication: Users can sign up for an account and log in using their email and password, enabling secure access to the Job Portal.
 
 2. Job Listing Management: Authenticated users can perform CRUD operations on job listings, including creating new job postings, viewing existing job listings, updating job details, and deleting job postings.
@@ -21,51 +21,70 @@ Key Features:
 
 6. Rate Limiting: The application implements rate limiting using the `express-rate-limit` middleware, preventing abuse and ensuring the API's stability and security.
 
-Project Structure:
--------------------
-The project repository on GitHub should have a well-organized structure, including the following directories:
+**API Endpoints:**
+Below is the list of API endpoints available in the application:
 
-1. `controllers`: Contains the controller functions responsible for handling business logic and processing requests from the API routes.
+**User Endpoints:**
+1. **Register**
+   - Method: POST
+   - URL: http://localhost:8080/api/v1/auth/register
+   - Description: Create a new user account.
 
-2. `models`: Includes MongoDB models, defining the schema for job listings and user data.
+2. **Login**
+   - Method: POST
+   - URL: http://localhost:8080/api/v1/auth/login
+   - Description: Log in to the Job Portal using email and password.
 
-3. `routes`: Contains the API routes and their corresponding controller functions, defining the RESTful API endpoints.
+3. **Update User**
+   - Method: PUT
+   - URL: http://localhost:8080/api/v1/user/update-user
+   - Description: Update user details.
 
-4. `middlewares`: Holds custom middleware functions used for request validation, authentication, and error handling.
+4. **User Details**
+   - Method: GET
+   - URL: http://localhost:8080/api/v1/user/get-user
+   - Description: Get user details.
 
-5. `public`: Contains any static files, such as images or stylesheets.
+**Job Endpoints:**
+1. **Create Job**
+   - Method: POST
+   - URL: http://localhost:8080/api/v1/job/create-job
+   - Description: Create a new job listing.
 
-6. `views`: If applicable, contains view templates for any server-side rendering components.
+2. **Job All**
+   - Method: GET
+   - URL: http://localhost:8080/api/v1/job/get-job
+   - Description: Get all job listings.
 
-7. `config`: Stores configuration files, such as database connection settings or environment variables.
+3. **Update Job**
+   - Method: PATCH
+   - URL: http://localhost:8080/api/v1/job/update-job/:id
+   - Description: Update a job listing by its ID.
 
-8. `index.js`: The main entry point of the application, setting up the server and middleware.
+4. **Delete Job**
+   - Method: DELETE
+   - URL: http://localhost:8080/api/v1/job/delete-job/:id
+   - Description: Delete a job listing by its ID.
 
-9. `package.json`: Lists the project's dependencies and scripts for running the application.
+5. **Job Stats**
+   - Method: GET
+   - URL: http://localhost:8080/api/v1/job/job-stats
+   - Description: Get statistics related to job listings.
 
-Documentation:
------------------
-The project's GitHub repository should include clear and concise documentation, providing instructions on how to set up the development environment, install dependencies, and run the application. Additionally, the documentation should explain how to interact with the API using Swagger UI and describe any environment variables or configuration options.
-
-Installation:
-----------------
+**Installation:**
 - Clone the repository from GitHub: `git clone <repository-url>`
 - Install dependencies: `npm install`
 
-Usage:
----------
+**Usage:**
 - Start the development server: `npm start`
 - Access the API documentation: `http://localhost:8080/api-doc/`
 - Create an account or log in to the Job Portal to manage job listings.
 
-Contributing:
----------------
+**Contributing:**
 If the project is open to contributions, include guidelines on how other developers can contribute to the project. This could involve instructions for submitting pull requests, code formatting guidelines, and other contribution guidelines.
 
-License:
------------
+**License:**
 Include the project's license information, indicating the terms under which the project is distributed.
 
-Conclusion:
---------------
-The Node.js Job Portal with CRUD Operations and Swagger API Documentation is a feature-rich web application that enables users to manage job listings efficiently. With clear documentation and a user-friendly interface provided by Swagger, the project is well-organized and easily accessible for both developers and end-users.
+**Conclusion:**
+The Node.js Job Portal with CRUD Operations and Swagger API Documentation is a feature-rich web application that enables users to manage job listings efficiently. With clear documentation and a user-friendly interface provided by Swagger, the project is well-organized and easily accessible for both developers and end-users. Keep up the excellent work, and consider continuously improving and expanding your project based on user feedback and your own ideas!
