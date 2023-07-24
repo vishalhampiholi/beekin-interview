@@ -9,7 +9,7 @@ Project Overview for GitHub:
 The Node.js Job Portal is a web application built using Node.js, Express, and MongoDB. It serves as a platform for users to register, log in, and manage job listings. The application includes full CRUD (Create, Read, Update, Delete) operations for job listings, allowing users to add, view, update, and delete job postings. Additionally, the API endpoints are thoroughly documented using Swagger, providing developers with clear documentation and a user-friendly interface to interact with the API.
 
 **Key Features:**
-1. User Authentication: Users can sign up for an account and log in using their email and password, enabling secure access to the Job Portal.
+1. User Authentication with JWT Tokens: Secure your API endpoints using JSON Web Tokens (JWT). Upon successful registration, a unique JWT token is generated for each user. This token must be included in the headers of subsequent API requests to access protected routes, ensuring secure access to user-specific data.
 
 2. Job Listing Management: Authenticated users can perform CRUD operations on job listings, including creating new job postings, viewing existing job listings, updating job details, and deleting job postings.
 
