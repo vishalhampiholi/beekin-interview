@@ -1,5 +1,8 @@
 # Title: Node.js Job Portal with CRUD Operations and Swagger API Documentation
 
+<img width="960" alt="image" src="https://github.com/apurvpatil18/Node.js-Job-Portal/assets/98873382/de0b0211-ea4e-4e39-8b22-84c30f90f55e">
+
+
 Description:
 -------------
 The Node.js Job Portal is a web application built using Node.js, Express, and MongoDB. It serves as a platform for users to register, log in, and manage job listings. The application includes full CRUD (Create, Read, Update, Delete) operations for job listings, allowing users to add, view, update, and delete job postings. Additionally, the API endpoints are thoroughly documented using Swagger, providing developers with clear documentation and a user-friendly interface to interact with the API.
