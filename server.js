@@ -1,5 +1,8 @@
 /* Import */
 // const express = require("express");  /* common js syntax*/
+/* SWAGGER API Documentation */
+import swaggerUi from "swagger-ui-express";
+import swaggerDoc from "swagger-jsdoc";
 /* PACKAGES IMPORT */
 import express from "express"; /*module js syntax*/
 import dotenv from "dotenv";
@@ -26,6 +29,25 @@ dotenv.config();
 /* MongoDB Connection  */
 connectDB();
 
+/* SWAGGER API CONFIG */
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Job Portal Application",
+      description: "Node Expressjs Job Portal",
+    },
+    servers: [
+      {
+        url: "http://localhost:8080",
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+
+const spec = swaggerDoc(options);
+
 /* REST OBJECT */
 const app = express();
 
@@ -42,6 +64,9 @@ app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/job", jobsRoutes);
+
+/*HOME ROUTE ROOT */
+app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));
 
 /* VALIDATION MIDDLEWARE */
 app.use(errorMiddleware);
