@@ -21,7 +21,12 @@ The Node.js Job Portal is a web application built using Node.js, Express, and Mo
 
 6. Rate Limiting: The application implements rate limiting using the `express-rate-limit` middleware, preventing abuse and ensuring the API's stability and security.
 
+
+
 **API Endpoints:**
+**Stateless authentication**
+In stateless authentication, the server does not maintain session state and relies on tokens to authenticate each request.
+
 Below is the list of API endpoints available in the application:
 
 **User Endpoints:**
