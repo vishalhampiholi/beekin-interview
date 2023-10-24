@@ -25,59 +25,10 @@ export const createJobController = async (req, res, next) => {
 
 /* GET ALL JOBS  */
 export const getAllJobsController = async (req, res, next) => {
-  const { status, workType, search, sort } = req.query;
-  /* CONDITION FOR SEACRH FILTER */
-  const queryObject = {
-    createdBy: req.user.userId,
-  };
-  /*LOGIC FOR  FILTER */
-  //STATUS filter
-  if (status && status !== "all") {
-    queryObject.status = status;
-  }
-  //WORKTYPE filter
-  if (workType && workType !== "all") {
-    queryObject.workType = workType;
-  }
-  //SERACH filter by position uppercase or lowercase
-  if (search) {
-    queryObject.position = { $regex: search, $options: "i" };
-  }
+const allJobs=await jobsModel.find().exec()
 
-  let queryResult = jobsModel.find(queryObject);
-
-  /*          SORTING            */
-  if (sort === "latest") {
-    queryResult = queryResult.sort("-createdAt");
-  }
-  // for the reverse or the oldest
-  if (sort == "oldest") {
-    queryResult = queryResult.sort("createdAt");
-  }
-  // for the alphabatical order
-  if (sort == "a-z") {
-    queryResult = queryResult.sort("position");
-  }
-  if (sort == "z-a") {
-    queryResult = queryResult.sort("-position");
-  }
-
-  /*        PAGINATION      */
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 10;
-  const skip = (page - 1) * limit;
-
-  queryResult = queryResult.skip(skip).limit(limit);
-  /* JOBS COUNT VARIABLE */
-  const totalJobs = await jobsModel.countDocuments(queryResult);
-  const numOfPage = Math.ceil(totalJobs / limit);
-  const jobs = await queryResult;
-
-  // const jobs = await jobsModel.find({ createdBy: req.user.userId });
-  res.status(200).json({
-    totalJobs,
-    jobs,
-    numOfPage,
+  return res.status(200).json({
+    allJobs
   });
 };
 

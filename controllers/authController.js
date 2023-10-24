@@ -1,4 +1,7 @@
 import userModel from "../models/userModel.js";
+import JWT from 'jsonwebtoken'
+
+
 
 export const registerController = async (req, res, next) => {
   const { Firstname, lastname, email, mobileNo, password } = req.body;
@@ -59,17 +62,19 @@ export const loginController = async (req, res, next) => {
     if (!user) {
       return next("Invalid Password");
     }
-
+     
     /* COMPARE PASSWORD */
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       return next("Invalid Password");
     }
     user.password = undefined;
+    const token = JWT.sign({userid:user._id},process.env.JWT_SECRET)
     return res.status(200).json({
       success: true,
       message: "Login Successfully",
       user,
+     token:token 
     });
   } catch (error) {
     return next(error);

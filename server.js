@@ -39,7 +39,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:8080",
+        url: "http://localhost:3001",
       },
     ],
   },
@@ -72,7 +72,7 @@ app.use("/api-doc", swaggerUi.serve, swaggerUi.setup(spec));
 app.use(errorMiddleware);
 
 /* PORT */
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 /* listen */
 app.listen(PORT, () => {
