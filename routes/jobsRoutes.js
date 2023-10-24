@@ -4,6 +4,7 @@ import {
   createJobController,
   deleteJobsController,
   getAllJobsController,
+  getSearchJobsController,
   jobStatsController,
   updateJobsContrller,
 } from "../controllers/jobsControllers.js";
@@ -15,7 +16,12 @@ const router = express.Router();
 router.post("/create-job", userAuth, createJobController);
 
 /* GET JOBS || GET */
-router.get("/get-job", userAuth, getAllJobsController);
+// router.get("/get-job", userAuth, getAllJobsController);
+
+router.get("/get-job",userAuth, getAllJobsController);
+
+
+router.get("/get-search-job", userAuth,getSearchJobsController);
 
 /* UPDATE JOBS || PATCH */
 router.patch("/update-job/:id", userAuth, updateJobsContrller);

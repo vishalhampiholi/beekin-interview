@@ -9,7 +9,7 @@ const jobSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: {
+    desc: {
         type: String,
         required: true
     },
@@ -27,4 +27,4 @@ const jobSchema = new mongoose.Schema({
     }
 });
 
-export default mongoose.model("Job", jobSchema);
+export default mongoose.model("job", jobSchema);

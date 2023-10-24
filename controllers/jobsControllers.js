@@ -30,7 +30,29 @@ const allJobs=await jobsModel.find().exec()
   return res.status(200).json({
     allJobs
   });
+
 };
+
+/* GET searched  JOBS  */
+export const getSearchJobsController = async (req, res, next) => {
+  const { searchKeyword } = req.body;
+  console.log(searchKeyword)
+  jobsModel.find({
+    $or: [
+        { req_skills: { $regex: new RegExp(searchKeyword, 'i') } }, // 'i' flag for case-insensitive search
+        { desc: { $regex: new RegExp(searchKeyword, 'i') } }
+    ]
+})
+.then(jobs => {
+    console.log(jobs);
+    return res.status(200).json({
+      jobs
+    });
+})
+.catch(error => {
+    console.error(error);
+});
+  };
 
 /* UPDATE JOB */
 export const updateJobsContrller = async (req, res, next) => {
